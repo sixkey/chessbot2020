@@ -256,10 +256,13 @@ class ChessBoard:
     def move(self, move_from, move_to, color):
         if not self.is_legal_move(move_from, move_to, color):
             return None
-        
-        self.matrix[move_to[1]][move_to[0]] = self.matrix.get(move_from)
-        self.matrix[move_from[1]][move_from[0]] = " "
 
+        self.matrix.set(move_to, self.matrix.get(move_from))
+        self.matrix.set(move_from," ")
+
+        if self.matrix.get(move_to)[2] == "p" and move_to[1] in [0, 7]:
+            self.matrix.set(move_to, self.matrix.get(move_to)[:2] + "q")
+         
         return True
 
     def get_pieces_value(self):

@@ -1,7 +1,23 @@
 from chess import ChessGame
 from players import RandomPlayer
 
-# Init chess game 
+# Init "chess" game 
+# In this simplified version of chess, you are trying to acquire pieces of your 
+# oponent, there isn't any check or mate. You can capture king just like any
+# other piece. The game ends the moment any player looses all his pieces, 
+# current player can't move or the max number of rounds was hit. After the 
+# game is ended, the values of pieces are summed up and the player with higher
+# total of piece value wins, here are the values of the pieces
+
+# Pawn      - x_p - 1
+# Bishup    - x_b - 3
+# Knight    - x_h - 3
+# Rook      - x_r - 5
+# Queen     - x_q - 9
+# King      - x_k - 20
+
+# Pieces move like in normal chess, but there isn't en passant or castling
+
 game = ChessGame()
 
 # Set game parameters, white player, black player, max rounds
