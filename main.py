@@ -1,16 +1,26 @@
-from chess import *
-from premade_players import *
+from chess import ChessGame
+from players import RandomPlayer
 
 # Init chess game 
 game = ChessGame()
 
 # Set game parameters, white player, black player, max rounds
+
 # Player is a object that has function move(board, color) where board is a 
 # ChessBoard object. To get matrix value simply use board[row][col]. To print
-# board into console use board.draw()
-game.new_game(RandomPlayer(), RandomPlayer(), 500)
+# board into console use board.draw(). Color is "w" for white "b" for black.
+
+# Player's move function needs to return from which tile where in form of  
+# Tuple[Tile, Tile] where Tile = Tuple[x,y], x = int, y = int. 
+# Example ((4, 1), (4, 3)) is e2 -> e4. 
+
+# Note, if you draw the board, it is vertically flipped, that means [0, 0] is 
+# in the bottom left
+
+player_white, palyer_black = RandomPlayer(), RandomPlayer()
+game.new_game(player_white, palyer_black, 500)
 
 # The result of the game, tuple of poitns for white and points for black
-# ChessGame.game(draw = False) -> if draw is True print chessboard every move
-result = game.game(True)
+# ChessGame.game(draw = None) -> draw can be a fuction that gets board
+result = game.game(lambda x: x.draw())
 print(result)

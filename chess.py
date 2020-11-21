@@ -344,8 +344,3 @@ class ChessGame:
             return 0, 2
         else:
             return 1, 1
-
-game = ChessGame()
-game.new_game(RandomPlayer(), RandomPlayer())
-result = game.game(True)
-print(result)
