@@ -36,6 +36,11 @@ game = ChessGame()
 # Note2, if you want to test your player, I would recommend running it against
 # a random player and see how many times you beat him.
 
+# Note3, do it from scratch, the imports you can use are:
+# math, random, typing, numpy, pprint
+
+# Note4, don't use game databases 
+
 player_white, palyer_black = RandomPlayer(), RandomPlayer()
 game.new_game(player_white, palyer_black, 500)
 
