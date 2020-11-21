@@ -78,8 +78,8 @@ class Matrix:
 
 class ChessBoard:
 
-    def __init__(self):
-        self.matrix = Matrix(8, " ")
+    def __init__(self, matrix=None):
+        self.matrix = matrix if matrix else Matrix(8, " ")
         self.fill = self.matrix.fill
         self.get = self.matrix.get
         self.set = self.matrix.set
@@ -92,6 +92,9 @@ class ChessBoard:
             "q": 9,
             "k": 20
         }
+
+    def copy(self):
+        return ChessBoard(self.matrix.copy())
 
     def reset(self):
         self.matrix.fill(" ")
@@ -289,7 +292,7 @@ class ChessBoard:
             yield y
     
     def __getitem__(self, row):
-        return self.board[row]
+        return self.matrix[row]
 
 class ChessGame:
 
