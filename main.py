@@ -33,6 +33,9 @@ game = ChessGame()
 # Note, if you draw the board, it is vertically flipped, that means [0, 0] is 
 # in the bottom left
 
+# Note2, if you want to test your player, I would recommend running it against
+# a random player and see how many times you beat him.
+
 player_white, palyer_black = RandomPlayer(), RandomPlayer()
 game.new_game(player_white, palyer_black, 500)
 
